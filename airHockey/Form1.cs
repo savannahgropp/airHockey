@@ -20,11 +20,11 @@ namespace airHockey
         }
 
         //making players and pucks
-        Rectangle player1 = new Rectangle(275, 100, 50, 55); 
+        Rectangle player1 = new Rectangle(275, 100, 50, 55);
         Rectangle player1top = new Rectangle(280, 100, 40, 5);
-        Rectangle player1right = new Rectangle(320, 105, 5, 45); 
+        Rectangle player1right = new Rectangle(320, 105, 5, 45);
         Rectangle player1bottom = new Rectangle(280, 150, 40, 5);
-        Rectangle player1left = new Rectangle(275, 105, 5, 45); 
+        Rectangle player1left = new Rectangle(275, 105, 5, 45);
 
         Rectangle player2 = new Rectangle(275, 750, 50, 55);
         Rectangle player2left = new Rectangle(275, 755, 5, 45);
@@ -32,7 +32,7 @@ namespace airHockey
         Rectangle player2bottom = new Rectangle(280, 800, 40, 5);
         Rectangle player2right = new Rectangle(320, 755, 5, 45);
 
-        Rectangle puck = new Rectangle(287, 437, 25, 25); 
+        Rectangle puck = new Rectangle(287, 437, 25, 25);
 
         Rectangle player1Net = new Rectangle(200, 0, 200, 20);
         Rectangle player2Net = new Rectangle(200, 880, 200, 20);
@@ -132,8 +132,8 @@ namespace airHockey
                 puck.X += puckXSpeed;
             }
 
-                //move player 1
-                if (wDown == true && player1.Y > 0)
+            //move player 1
+            if (wDown == true && player1.Y > 0)
             {
                 player1.Y -= playerSpeed;
                 player1top.Y -= playerSpeed;
@@ -227,7 +227,7 @@ namespace airHockey
 
                 friction();
 
-                puckSound.Play();   
+                puckSound.Play();
             }
             if (puck.X < 0)
             {
@@ -248,11 +248,11 @@ namespace airHockey
             {
                 counter = 1;
                 puck.Y += 10;
-                player1.Y-= 5;
-                player1top.Y-= 5;
-                player1bottom.Y-= 5;
-                player1right.Y-= 5;
-                player1left.Y-= 5;
+                player1.Y -= 5;
+                player1top.Y -= 5;
+                player1bottom.Y -= 5;
+                player1right.Y -= 5;
+                player1left.Y -= 5;
 
                 puckYSpeed = 9;
                 friction();
@@ -367,6 +367,7 @@ namespace airHockey
                 player2left.X += 5;
 
                 puckXSpeed = 9;
+                friction();
 
                 puckSound.Play();
             }
