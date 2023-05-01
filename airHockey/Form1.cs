@@ -34,8 +34,8 @@ namespace airHockey
 
         Rectangle puck = new Rectangle(287, 437, 25, 25);
 
-        Rectangle player1Net = new Rectangle(200, 0, 200, 20);
-        Rectangle player2Net = new Rectangle(200, 880, 200, 20);
+        Rectangle player1Net = new Rectangle(200, 0, 200, 10);
+        Rectangle player2Net = new Rectangle(200, 890, 200, 10);
 
         int player1Score = 0;
         int player2Score = 0;
@@ -378,7 +378,7 @@ namespace airHockey
                 resetField();
                 player2Score++;
                 p2Score.Text = $"{player2Score}";
-                puck.Y += 15;
+                puck.Y -= 20;
             }
             //check if puck hit player 2 net and add score to player 1
             if (player2Net.IntersectsWith(puck))
@@ -386,6 +386,7 @@ namespace airHockey
                 resetField();
                 player1Score++;
                 p1Score.Text = $"{player1Score}";
+                puck.Y += 20;
             }
             //check score and stop the game if a player hits 3 wins
             if (player1Score == 3)
